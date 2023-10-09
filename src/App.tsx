@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          Edita o arquivo <code>src/App.tsx</code> e salve para recarregar.
         </p>
         <a
           className="App-link"
@@ -16,11 +16,15 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Aprenda React
         </a>
       </header>
     </div>
   );
+}
+
+function oi(){
+  alert("oi");
 }
 
 export default App;
