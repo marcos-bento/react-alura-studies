@@ -1,11 +1,14 @@
 import React from "react";
-import lista from '../lista.module.css';
+import style from './item.module.css';
 import { ITarefa } from "../../../types/tarefa";
 
-export default function Item({tarefa, tempo, selecionado, completado, id}: ITarefa){
-    console.log('Item atual: ', {tarefa, tempo, selecionado, completado, id})
+interface Props extends ITarefa{
+    selecionaTarefa: (tarefaSelecionada: ITarefa) => void
+}
+
+export default function Item({tarefa, tempo, selecionado, completado, id, selecionaTarefa}: Props){
     return (
-        <li className={lista.item}>
+        <li className={`${style.item} ${selecionado ? style.itemSelecionado : ''}`} onClick={() => selecionaTarefa({tarefa,tempo,selecionado,completado,id})}>
             <h3>{tarefa}</h3>
             <span>{tempo}</span>
         </li>
